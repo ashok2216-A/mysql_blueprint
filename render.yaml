@@ -1,6 +1,6 @@
 databases:
   - name: mysql-instance
-    plan: free  # Options: starter, standard, pro
+    plan: starter  # Options: starter, standard, pro
     databaseName: etl_db  # Replace with your desired database name
     user: ashok_2216  # Replace with your database username
     region: oregon  # Options: oregon, frankfurt, singapore, etc.
