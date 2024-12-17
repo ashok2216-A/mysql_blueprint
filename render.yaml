@@ -2,7 +2,7 @@ services:
   - name: mysql
     type: pserv
     env: docker
-    plan: starter
+    plan: free
     dockerfilePath: Dockerfile
     envVars:
       - key: MYSQL_DATABASE
