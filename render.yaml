@@ -1,24 +1,10 @@
-# render.yaml
-services:
-  - name: my-mysql-instance
-    type: private_service
-    env:
-      MYSQL_DATABASE: my_database
-      MYSQL_USER: mysql
-      MYSQL_PASSWORD: secure_password
-      MYSQL_ROOT_PASSWORD: root_password
-    disk:
-      name: mysql
-      mountPath: /var/lib/mysql
-      size: 1GB
-    plan: starter
-    dockerfilePath: ./Dockerfile
-    envVars:
-      - key: MYSQL_DATABASE
-        value: my_database
-      - key: MYSQL_USER
-        value: mysql
-      - key: MYSQL_PASSWORD
-        value: secure_password
-      - key: MYSQL_ROOT_PASSWORD
-        value: root_password
+databases:
+  - name: mysql-instance
+    plan: free  # Options: starter, standard, pro
+    databaseName: etl_db  # Replace with your desired database name
+    user: ashok_2216  # Replace with your database username
+    region: oregon  # Options: oregon, frankfurt, singapore, etc.
+    mysqlVersion: "8.0"  # Specify the MySQL version
+    ipAllowList: 
+      - "0.0.0.0/0"  # Allow access from all IPs (use with caution)
+      - "123.45.67.89/32"  # Replace with your IP for secure access
