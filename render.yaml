@@ -1,22 +1,15 @@
-# databases:
-#   - name: mysql-instance
-#     plan: free  # Options: starter, standard, pro
-#     databaseName: etl_db  # Replace with your desired database name
-#     user: ashok_2216  # Replace with your database username
-#     region: oregon  # Options: oregon, frankfurt, singapore, etc.
-#     # mysqlVersion: "8.0"  # Specify the MySQL version
-#     # ipAllowList: 
-#       # - "0.0.0.0/0"  # Allow access from all IPs (use with caution)
-#       # - "123.45.67.89/32"  # Replace with your IP for secure access
-
-
-
 services:
 - type: pserv
   name: mysql
-  plan: free
+  plan: standard
   env: docker
   autoDeploy: false
+  disk:
+    name: mysql
+    mountPath: /var/lib/mysql
+    sizeGB: 10
+  envVars:
+  - fromGroup: mysql
 
 envVarGroups:
 - name: mysql
