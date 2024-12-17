@@ -1,0 +1,22 @@
+services:
+  mysql:
+    runtime: mysql
+    name: my-mysql-instance
+    envVars:
+      MYSQL_DATABASE: my_database
+      MYSQL_USER: mysql_user
+      MYSQL_PASSWORD: secure_password
+      MYSQL_ROOT_PASSWORD: root_password
+    disks:
+      - name: mysql
+        mountPath: /var/lib/mysql
+        size: 1GB
+
+databases:
+  my_database:
+    user: mysql_user
+    password: secure_password
+    name: my_database
+    charset: utf8mb4
+    collation: utf8mb4_unicode_ci
+
