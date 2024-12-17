@@ -1,6 +1,6 @@
 services:
   - name: mysql
-    type: private_service
+    type: pserv
     env: docker
     plan: starter
     dockerfilePath: Dockerfile
