@@ -6,14 +6,10 @@ services:
     dockerfilePath: Dockerfile
     envVars:
       - key: MYSQL_DATABASE
-        value: etl_db  # Replace with your database name
+        value: my_database
       - key: MYSQL_USER
-        value: ashok_2216   # Replace with your preferred username
+        value: mysql_user
       - key: MYSQL_PASSWORD
-        value: 6900  # Replace with a strong password
+        value: secure_password
       - key: MYSQL_ROOT_PASSWORD
-        value: 2216  # Replace with a strong root password
-    # disk:
-    #   name: mysql_data
-    #   mountPath: /var/lib/mysql
-    #   sizeGB: 1  # Adjust size as needed
+        value: root_secure_password
