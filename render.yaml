@@ -1,7 +1,7 @@
 # render.yaml
 services:
   - name: my-mysql-instance
-    type: database
+    type: private_service
     env:
       MYSQL_DATABASE: my_database
       MYSQL_USER: mysql
@@ -11,3 +11,14 @@ services:
       name: mysql
       mountPath: /var/lib/mysql
       size: 1GB
+    plan: starter
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: MYSQL_DATABASE
+        value: my_database
+      - key: MYSQL_USER
+        value: mysql
+      - key: MYSQL_PASSWORD
+        value: secure_password
+      - key: MYSQL_ROOT_PASSWORD
+        value: root_password
